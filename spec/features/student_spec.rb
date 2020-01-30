@@ -82,4 +82,11 @@ describe 'linking from the index page to the show page' do
     visit students_path
     expect(page).to have_link(@student.to_s, href: student_path(@student))
   end
+  
+describe 'new post' do
+  it 'ensures that the form route works with the /new action' do
+    visit new_post_path
+    expect(page.status_code).to eq(200)
+  end
+end
 end
